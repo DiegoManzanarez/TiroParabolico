@@ -43,11 +43,11 @@ def move():
         targets.append(target)
 
     for target in targets:
-        target.x -= 1
+        target.x -= 0.81
 
     if inside(ball):
-        speed.y -= 0.10
-        ball.move(speed*1.5)
+        speed.y -= 0.34
+        ball.move(speed*1.2)#Se incremento la velocidad de la bola
 
     dupe = targets.copy()
     targets.clear()
@@ -60,8 +60,8 @@ def move():
 
     for target in targets:
         if not inside(target):
-            goto (target.x, target.y)
-
+            goto (target.x, target.y)#Se agregó la funcionalidad para que el juego nunca termine
+    #Se aceleró el movimiento de los balones
     ontimer(move, 18)
 
 setup(420, 420, 370, 0)
